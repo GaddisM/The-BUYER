@@ -218,20 +218,21 @@ DeviceFileEvents
 ### KQL — Registry Tampering (Q11, Q12)
 
 ```kql
-// Target key
-DeviceRegistryEvents
-| where TimeGenerated between (datetime(2026-01-26) .. datetime(2026-01-28))
-| where DeviceName =~ "as-pc2"
-| where RegistryValueName == "DisableAntiSpyware"
-| order by TimeGenerated asc
 
 // Broader Windows Defender key scope
 DeviceRegistryEvents
 | where TimeGenerated between (datetime(2026-01-27T18:00:00) .. datetime(2026-01-28T06:00:00))
-| where DeviceName =~ "as-pc2"
+| where DeviceName == "as-pc2"
 | where RegistryKey contains "Windows Defender"
 | project TimeGenerated, DeviceName, RegistryKey, RegistryValueName, RegistryValueData, ActionType
 | order by TimeGenerated desc
+
+// Target key
+DeviceRegistryEvents
+| where TimeGenerated between (datetime(2026-01-26) .. datetime(2026-01-28))
+| where DeviceName == "as-pc2"
+| where RegistryValueName == "DisableAntiSpyware"
+| order by TimeGenerated asc
 ```
 
 #### 📋 MDE Result — Windows Defender policy keys disabled on AS-PC2
