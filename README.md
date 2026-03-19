@@ -1,4 +1,4 @@
-# THE BUYER
+# THEBUYER
 # 🔴 Incident Response Report — Akira Ransomware
 ### Ashford Sterling Recruitment | SancLogic Cyber Range — *The Buyer* (Advanced)
 
