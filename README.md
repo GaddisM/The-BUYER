@@ -252,7 +252,7 @@ DeviceRegistryEvents
 
 > **Answer:** `0e7da57d92eaa6bda9d0bbc24b5f0827250aa42f295fd056ded50c6e3c3fb96c`
 
-SHA256 of `kill.bat`. Add to endpoint blocklists and EDR custom detections. ⚠️ Do not upload to VirusTotal.
+SHA256 of `kill.bat`. Add to endpoint blocklists and EDR custom detections.
 
 ---
 
