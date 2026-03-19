@@ -650,9 +650,6 @@ DeviceFileEvents
 
 #### 📋 MDE Result — st.exe staged on AS-SRV by powershell.exe (Q30, Q31)
 
-| TimeGenerated [UTC] | DeviceName | FileName | InitiatingProcess | SHA256 |
-|---|---|---|---|---|
-| 1/27/2026, 10:24:08 PM | as-srv | **st.exe** | powershell.exe | `512a1f4ed9f512572608c729a2b89f44ea66a40433073aedcd914bd2d33b7015` |
 
 <img width="976" height="314" alt="Screenshot 2026-03-19 at 14 43 42" src="https://github.com/user-attachments/assets/2a0707cc-90e6-4f7d-9f44-b5cbe3190937" />
 
@@ -662,14 +659,7 @@ DeviceFileEvents
 
 #### 📋 MDE Result — File events on AS-SRV showing full staging chain (Q32)
 
-| TimeGenerated [UTC] | DeviceName | FileName | InitiatingProcess |
-|---|---|---|---|
-| 1/27/2026, 10:24:09 PM | as-srv | **exfil_data.zip** | st.exe |
-| 1/27/2026, 10:24:08 PM | as-srv | st.exe | powershell.exe |
-| 1/27/2026, 10:20:28 PM | as-srv | updater.exe | cmd.exe |
-| 1/27/2026, 10:15:53 PM | as-srv | updater.exe | powershell.exe |
-| 1/27/2026, 10:15:17 PM | as-srv | wsync.exe | powershell.exe |
-| 1/27/2026, 10:14:28 PM | as-srv | wsync.exe | powershell.exe |
+<img width="990" height="269" alt="Screenshot 2026-03-18 at 10 56 11" src="https://github.com/user-attachments/assets/a8ff6c15-778f-4eb9-a617-cdd7937238b9" />
 
 ---
 
@@ -741,38 +731,24 @@ DeviceFileEvents
 
 #### 📋 MDE Result — Non-standard process summary; updater.exe identified (Q33, Q34)
 
-| FileName | FolderPath | SHA256 (truncated) | DeviceName | count |
-|---|---|---|---|---|
-| wsync.exe | C:\ProgramData\wsync.exe | `0072ca0d0adc9a1b2e16...` | as-srv | 2 |
-| RuntimeBroker.exe | C:\Users\Public\RuntimeBroker.exe | `48b97fd91946e81e3e77...` | as-srv | 2 |
-| AnyDesk.exe | C:\Users\Public\AnyDesk.exe | `f42b635d93720d1624c7...` | as-pc1 | 2 |
-| st.exe | C:\ProgramData\st.exe | `512a1f4ed9f512572608...` | as-srv | 1 |
-| **updater.exe** | **C:\ProgramData\updater.exe** | **`e609d070ee9f76934d73...`** | **as-srv** | **1** |
+
+<img width="919" height="373" alt="Screenshot 2026-03-18 at 10 57 37" src="https://github.com/user-attachments/assets/3d8d38e6-264c-4f0b-b8fd-3ef9d747fc7f" />
 
 #### 📋 MDE Result — updater.exe staged on AS-SRV by powershell.exe (Q35)
 
-| TimeGenerated [UTC] | DeviceName | FileName | ProcessCommandLine | InitiatingProcessCommandLine |
-|---|---|---|---|---|
-| 1/27/2026, 10:18:29 PM | as-srv | updater.exe | "updater.exe" | **"powershell.exe"** |
+
+<img width="1031" height="148" alt="Screenshot 2026-03-18 at 10 58 35" src="https://github.com/user-attachments/assets/f356f9fc-a4c8-411b-91d7-f56b6158b082" />
+
 
 #### 📋 MDE Result — Shadow copy deletion commands (Q36)
 
-| TimeGenerated [UTC] | FileName | ProcessCommandLine | AccountName | DeviceName |
-|---|---|---|---|---|
-| 1/27/2026, 9:09:11 PM | WMIC.exe | `wmic shadowcopy delete` | david.mitchell | as-pc2 |
-| 1/27/2026, 9:09:11 PM | cmd.exe | `cmd.exe /c "wmic shadowcopy delete"` | david.mitchell | as-pc2 |
-| 1/27/2026, 9:09:10 PM | vssadmin.exe | `vssadmin delete shadows /all /quiet` | david.mitchell | as-pc2 |
-| 1/27/2026, 9:09:10 PM | cmd.exe | `cmd.exe /c "vssadmin delete shadows /all /quiet"` | david.mitchell | as-pc2 |
+<img width="1060" height="204" alt="Screenshot 2026-03-18 at 10 59 56" src="https://github.com/user-attachments/assets/67b922c1-dea3-463b-8317-fb0d092dfb03" />
+
 
 #### 📋 MDE Result — akira_readme.txt dropped by updater.exe at 22:18:33 UTC (Q37, Q38)
 
-| TimeGenerated [UTC] | FileName | FolderPath | InitiatingProcess | DeviceName |
-|---|---|---|---|---|
-| 1/27/2026, 10:22:15 PM | akira_readme.lnk | C:\Users\AS.SRV.Administrator\AppData\Roaming\Microsoft\W... | explorer.exe | as-srv |
-| 1/27/2026, 10:18:34 PM | akira_readme.txt | C:\Users\AS.SRV.Administrator\Desktop\ | updater.exe | as-srv |
-| **1/27/2026, 10:18:33 PM** | **akira_readme.txt** | **C:\Users\AS.SRV.Administrator\Downloads\** | **updater.exe** | **as-srv** |
-| 1/27/2026, 10:18:33 PM | akira_readme.txt | C:\Users\AS.SRV.Administrator\Documents\ | updater.exe | as-srv |
-| 1/27/2026, 10:18:33 PM | akira_readme.txt | C:\Users\AS.SRV.Administrator\Desktop\ | updater.exe | as-srv |
+<img width="1096" height="241" alt="Screenshot 2026-03-18 at 11 01 15" src="https://github.com/user-attachments/assets/c06105b5-afa0-4226-b2a9-af273505154c" />
+
 
 ---
 
@@ -854,6 +830,7 @@ DeviceProcessEvents
 |---|---|
 | as-srv | 72 |
 | as-pc2 | 60 |
+<img width="297" height="123" alt="Screenshot 2026-03-18 at 11 02 18" src="https://github.com/user-attachments/assets/16001890-c55f-4cdd-bd8f-183a78eec401" />
 
 ---
 
