@@ -434,20 +434,12 @@ DeviceProcessEvents
 
 #### 📋 MDE Result — wsync.exe identified among dropped executables (Q19)
 
-| TimeGenerated [UTC] | DeviceName | FileName | InitiatingProcess |
-|---|---|---|---|
-| 1/27/2026, 8:44:32 PM | as-pc2 | **wsync.exe** | powershell.exe |
-| 1/27/2026, 8:44:07 PM | as-pc2 | wsync.exe | powershell.exe |
-| 1/27/2026, 8:22:50 PM | as-pc2 | wsync.exe | powershell.exe |
-| 1/27/2026, 8:17:58 PM | as-pc2 | advanced_ip_scanner.exe | scan.tmp |
-| 1/27/2026, 8:17:45 PM | as-pc2 | scan.exe | powershell.exe |
+<img width="1109" height="466" alt="Screenshot 2026-03-18 at 10 42 46" src="https://github.com/user-attachments/assets/08440100-1c1f-493b-8821-27635bd48634" />
+
 
 #### 📋 MDE Result — wsync.exe executions with SHA256 hashes (Q20, Q21, Q22)
 
-| TimeGenerated [UTC] | DeviceName | FileName | FolderPath | SHA256 |
-|---|---|---|---|---|
-| 1/27/2026, 8:44:32 PM | as-pc2 | wsync.exe | C:\ProgramData\wsync.exe | `0072ca0d0adc9a1b2e1625db4409f57fc32b5a09c414786bf08c4d8e6a073654` |
-| 1/27/2026, 8:22:50 PM | as-pc2 | wsync.exe | C:\ProgramData\wsync.exe | `66b876c52946f4aed47dd696d790972ff265b6f4451dab54245bc4ef1206d90b` |
+<img width="1231" height="139" alt="Screenshot 2026-03-18 at 10 43 32" src="https://github.com/user-attachments/assets/35280037-f813-464b-a95b-89a0c9a234c9" />
 
 ---
 
