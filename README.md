@@ -303,23 +303,13 @@ DeviceEvents
 
 #### 📋 MDE Result — `tasklist | findstr lsass` executed by wsync.exe (Q13)
 
-| TimeGenerated [UTC] | DeviceName | FileName | ProcessCommandLine | InitiatingProcess |
-|---|---|---|---|---|
-| 1/27/2026, 9:11:00 PM | as-pc2 | cmd.exe | `cmd.exe /c "tasklist \| findstr lsass"` | wsync.exe |
-| 1/27/2026, 9:11:00 PM | as-pc2 | tasklist.exe | tasklist | cmd.exe |
-| 1/27/2026, 9:14:43 PM | as-pc2 | cmd.exe | `cmd.exe /c "tasklist \| findstr lsass"` | wsync.exe |
-| 1/27/2026, 9:14:43 PM | as-pc2 | tasklist.exe | tasklist | cmd.exe |
+
+<img width="1301" height="194" alt="Screenshot 2026-03-18 at 10 34 38" src="https://github.com/user-attachments/assets/41b5f6fd-2c5b-49e2-a316-1b0de19deed1" />
+
 
 #### 📋 MDE Result — `\Device\NamedPipe\lsass` accessed (Q14)
 
-| TimeGenerated [UTC] | DeviceName | InitiatingProcessFileName | PipeName |
-|---|---|---|---|
-| 1/27/2026, 9:42:56 PM | as-pc2 | *(blank)* | \Device\NamedPipe\lsass |
-| 1/27/2026, 8:10:41 PM | as-pc2 | net1.exe | \Device\NamedPipe\lsass |
-| 1/27/2026, 7:14:45 PM | as-pc2 | taskhostw.exe | \Device\NamedPipe\lsass |
-| 1/27/2026, 6:49:24 PM | as-pc2 | srtasks.exe | \Device\NamedPipe\lsass |
-| 1/27/2026, 6:31:34 PM | as-pc2 | waappagent.exe | \Device\NamedPipe\lsass |
-| 1/27/2026, 6:31:25 PM | as-pc2 | svchost.exe | \Device\NamedPipe\lsass |
+<img width="774" height="301" alt="Screenshot 2026-03-18 at 10 36 19" src="https://github.com/user-attachments/assets/134bf53e-b9d7-42d1-a3b4-54999f7287e6" />
 
 ---
 
