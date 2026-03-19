@@ -140,6 +140,7 @@ DeviceNetworkEvents
 | 1/27/2026, 7:24:14 PM | as-srv | sync.cloud-endpoint.net | 104.21.30.237 | runtimebroker.exe |
 
 ---
+<img width="1311" height="439" alt="Screenshot 2026-03-18 at 09 51 29" src="https://github.com/user-attachments/assets/687241a1-a43b-4575-8e2b-80b52eafdf2f" />
 
 ### KQL — C2 IP Addresses (Q7)
 
