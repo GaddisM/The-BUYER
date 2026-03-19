@@ -290,7 +290,7 @@ DeviceProcessEvents
 
 // Q14 - Named pipe access
 DeviceEvents
-| where DeviceName in~ ("as-pc2")
+| where DeviceName == "as-pc2"
 | where TimeGenerated between (datetime(2026-01-26) .. datetime(2026-01-28))
 | where ActionType == "NamedPipeEvent"
 | extend PipeName = tostring(parse_json(AdditionalFields).PipeName)
