@@ -361,34 +361,18 @@ DeviceNetworkEvents
 
 #### 📋 MDE Result — AnyDesk.exe executed from C:\Users\Public (Q15, Q16)
 
-| TimeGenerated [UTC] | FileName | FolderPath | ProcessCommandLine |
-|---|---|---|---|
-| 1/27/2026, 8:13:33 PM | AnyDesk.exe | C:\Users\Public\AnyDesk.exe | "AnyDesk.exe" --backend |
-| 1/27/2026, 7:29:34 PM | AnyDesk.exe | C:\Users\Public\AnyDesk.exe | "AnyDesk.exe" --backend |
-| 1/27/2026, 7:21:10 PM | AnyDesk.exe | C:\Users\Public\AnyDesk.exe | "AnyDesk.exe" --local-control |
-| 1/27/2026, 7:21:10 PM | AnyDesk.exe | C:\Users\Public\AnyDesk.exe | "AnyDesk.exe" --local-service |
-| 1/27/2026, 7:21:08 PM | AnyDesk.exe | C:\Users\Public\AnyDesk.exe | "AnyDesk.exe" |
+<img width="827" height="391" alt="Screenshot 2026-03-18 at 10 39 32" src="https://github.com/user-attachments/assets/c41a7bc3-e6b3-44ce-9fd4-fa0d69ee3eac" />
+
 
 #### 📋 MDE Result — AnyDesk.exe external connections; attacker IP 88.97.164.155 (Q17)
 
-| TimeGenerated [UTC] | DeviceName | RemoteIP | RemoteIPType | InitiatingProcess |
-|---|---|---|---|---|
-| 1/27/2026, 8:12:20 PM | as-pc2 | **88.97.164.155** | Public | anydesk.exe |
-| 1/27/2026, 7:29:49 PM | as-pc2 | 192.168.1.60 | Private | anydesk.exe |
-| 1/27/2026, 7:29:49 PM | as-pc2 | 88.97.164.155 | Public | anydesk.exe |
-| 1/27/2026, 7:29:49 PM | as-pc2 | 172.17.0.1 | Private | anydesk.exe |
-| 1/27/2026, 7:29:49 PM | as-pc2 | 100.67.16.2 | CarrierGradeNat | anydesk.exe |
-| 1/27/2026, 7:21:14 PM | as-pc2 | 5.188.124.20 | Public | anydesk.exe |
-| 1/27/2026, 7:21:14 PM | as-pc2 | 64.31.23.30 | Public | anydesk.exe |
+<img width="991" height="451" alt="Screenshot 2026-03-18 at 10 40 19" src="https://github.com/user-attachments/assets/e51ce7ff-9f3b-415e-977d-828bff4d088c" />
+
 
 #### 📋 MDE Result — Compromised account david.mitchell confirmed running AnyDesk (Q18)
 
-| TimeGenerated [UTC] | InitiatingProcessAccountName | RemoteIP |
-|---|---|---|
-| 1/27/2026, 8:12:20 PM | **david.mitchell** | 88.97.164.155 |
-| 1/27/2026, 7:29:49 PM | david.mitchell | 88.97.164.155 |
-| 1/27/2026, 7:21:14 PM | david.mitchell | 5.188.124.20 |
-| 1/27/2026, 7:21:14 PM | david.mitchell | 64.31.23.30 |
+<img width="731" height="451" alt="Screenshot 2026-03-18 at 10 41 30" src="https://github.com/user-attachments/assets/0383f052-7a2b-404e-8861-229d8d6562cd" />
+
 
 ---
 
