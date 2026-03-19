@@ -214,9 +214,7 @@ DeviceFileEvents
 
 #### 📋 MDE Result — kill.bat discovered in C:\ProgramData\, initiated by wsync.exe
 
-| TimeGenerated [UTC] | DeviceName | FileName | FolderPath | SHA256 | InitiatingProcess |
-|---|---|---|---|---|---|
-| 1/27/2026, 9:02:33 PM | as-pc2 | kill.bat | C:\ProgramData\kill.bat | `0e7da57d92eaa6bda9d0bbc24b5f0827250aa42f295fd056ded50c6e3c3fb96c` | wsync.exe |
+<img width="1301" height="89" alt="Screenshot 2026-03-18 at 10 02 01" src="https://github.com/user-attachments/assets/219b6fbe-95ff-4a57-bd9a-7b0d80fd08be" />
 
 ---
 
