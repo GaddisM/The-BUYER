@@ -338,7 +338,7 @@ The threat actor returned to the environment using AnyDesk pre-staged during the
 DeviceProcessEvents
 | where DeviceName == "as-pc2"
 | where TimeGenerated between (datetime(2026-01-26) .. datetime(2026-01-28))
-| where FileName =~ "AnyDesk.exe"
+| where FileName == "AnyDesk.exe"
 | project TimeGenerated, FileName, FolderPath, ProcessCommandLine
 | sort by TimeGenerated
 
@@ -353,7 +353,7 @@ DeviceNetworkEvents
 DeviceNetworkEvents
 | where DeviceName == "as-pc2"
 | where TimeGenerated between (datetime(2026-01-26) .. datetime(2026-01-28))
-| where InitiatingProcessFileName =~ "AnyDesk.exe"
+| where InitiatingProcessFileName in~ ("AnyDesk.exe")
 | project TimeGenerated, InitiatingProcessAccountName, RemoteIP
 ```
 
