@@ -501,6 +501,7 @@ DeviceProcessEvents
 
 #### 📋 MDE Result — scan.exe execution with full arguments and bitsadmin download chain (Q23–Q25, Q28)
 
+<img width="1335" height="322" alt="Screenshot 2026-03-19 at 14 47 13" src="https://github.com/user-attachments/assets/d81f6539-37cd-4468-b9e7-f0b67eb9c519" />
 
 <img width="1273" height="292" alt="Screenshot 2026-03-18 at 10 48 19" src="https://github.com/user-attachments/assets/cad02c9c-cf9f-40a5-91cf-e16a1f5f1acc" />
 
