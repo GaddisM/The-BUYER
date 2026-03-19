@@ -461,7 +461,7 @@ The beacon was written to `C:\ProgramData\`, a writable system directory accessi
 
 > **Answer:** `66b876c52946f4aed47dd696d790972ff265b6f4451dab54245bc4ef1206d90b`
 
-SHA256 of the original `wsync.exe` deployment. This version failed and was subsequently replaced. ⚠️ Do not upload to VirusTotal.
+SHA256 of the original `wsync.exe` deployment. This version failed and was subsequently replaced. 
 
 ---
 
@@ -469,7 +469,7 @@ SHA256 of the original `wsync.exe` deployment. This version failed and was subse
 
 > **Answer:** `0072ca0d0adc9a1b2e1625db4409f57fc32b5a09c414786bf08c4d8e6a073654`
 
-SHA256 of the replacement `wsync.exe`. Two distinct hashes suggest a deliberate recompile to evade hash-based detection. ⚠️ Do not upload to VirusTotal.
+SHA256 of the replacement `wsync.exe`. Two distinct hashes suggest a deliberate recompile to evade hash-based detection.
 
 ---
 
