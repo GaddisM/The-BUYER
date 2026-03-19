@@ -239,11 +239,7 @@ DeviceRegistryEvents
 
 #### 📋 MDE Result — Windows Defender policy keys disabled on AS-PC2
 
-| TimeGenerated [UTC] | DeviceName | RegistryValueName | RegistryValueData | ActionType |
-|---|---|---|---|---|
-| 1/27/2026, 9:03:42 PM | as-pc2 | **DisableAntiSpyware** | 1 | RegistryValueSet |
-| 1/27/2026, 9:03:41 PM | as-pc2 | DisableIOAVProtection | 1 | RegistryValueSet |
-| 1/27/2026, 9:03:39 PM | as-pc2 | DisableBehaviorMonitoring | 1 | RegistryValueSet |
+<img width="1301" height="122" alt="Screenshot 2026-03-18 at 10 03 06" src="https://github.com/user-attachments/assets/fab9d999-c583-487d-bfae-f48acd8e2dde" />
 
 ---
 
