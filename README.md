@@ -126,21 +126,9 @@ DeviceNetworkEvents
 ```
 
 #### 📋 MDE Result — DeviceNetworkEvents: AS-SRV C2 domain connections
-
-| TimeGenerated [UTC] | DeviceName | RemoteUrl | RemoteIP | InitiatingProcess |
-|---|---|---|---|---|
-| 1/27/2026, 10:18:45 PM | as-srv | cdn.cloud-endpoint.net | 104.21.30.237 | runtimebroker.exe |
-| 1/27/2026, 10:18:32 PM | as-srv | cdn.cloud-endpoint.net | 104.21.30.237 | wsync.exe |
-| 1/27/2026, 10:18:22 PM | as-srv | cdn.cloud-endpoint.net | 104.21.30.237 | wsync.exe |
-| 1/27/2026, 10:15:27 PM | as-srv | sync.cloud-endpoint.net | 172.67.174.46 | wsync.exe |
-| 1/27/2026, 10:15:17 PM | as-srv | sync.cloud-endpoint.net | 172.67.174.46 | wsync.exe |
-| 1/27/2026, 10:14:28 PM | as-srv | sync.cloud-endpoint.net | 172.67.174.46 | powershell.exe |
-| 1/27/2026, 10:13:23 PM | as-srv | sync.cloud-endpoint.net | 172.67.174.46 | runtimebroker.exe |
-| 1/27/2026, 10:13:11 PM | as-srv | sync.cloud-endpoint.net | 172.67.174.46 | runtimebroker.exe |
-| 1/27/2026, 7:24:14 PM | as-srv | sync.cloud-endpoint.net | 104.21.30.237 | runtimebroker.exe |
-
----
 <img width="1311" height="439" alt="Screenshot 2026-03-18 at 09 51 29" src="https://github.com/user-attachments/assets/687241a1-a43b-4575-8e2b-80b52eafdf2f" />
+---
+
 
 ### KQL — C2 IP Addresses (Q7)
 
@@ -166,11 +154,10 @@ DeviceNetworkEvents
 
 #### 📋 MDE Result — AnyDesk relay domains on AS-SRV
 
-| TimeGenerated [UTC] | DeviceName | RemoteUrl | RemoteIP | InitiatingProcess |
-|---|---|---|---|---|
-| 1/27/2026, 10:08:15 PM | as-srv | relay-0b975d23.net.anydesk.com | 89.187.179.132 | anydesk.exe |
-| 1/27/2026, 7:25:23 PM | as-srv | relay-c6eb91af.net.anydesk.com | 5.188.124.20 | anydesk.exe |
-| 1/27/2026, 7:25:23 PM | as-srv | relay-b8f8a0be.net.anydesk.com | 5.188.124.23 | anydesk.exe |
+<img width="1207" height="307" alt="Screenshot 2026-03-18 at 09 52 27" src="https://github.com/user-attachments/assets/4b9767fc-24f5-4ea4-bd7e-3bad5fbed14a" />
+
+---
+<img width="1207" height="122" alt="Screenshot 2026-03-18 at 09 57 07" src="https://github.com/user-attachments/assets/1c758aa7-a001-4939-a857-88101f9e2a83" />
 
 ---
 
