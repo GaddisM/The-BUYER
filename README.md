@@ -201,14 +201,11 @@ Prior to payload deployment, the threat actor disabled Windows Defender through 
 
 ```kql
 DeviceFileEvents
-| where TimeGenerated > ago(90d)
-| where DeviceName in~ ("as-pc1", "as-pc2")
+| where TimeGenerated between (datetime(2026-01-27T18:00:00) .. datetime(2026-01-28T06:00:00))
+| where DeviceName in~ ("as-pc2", "as-rsv")
 | where FileName endswith ".bat" or FileName endswith ".ps1" or FileName endswith ".cmd"
-| where FolderPath has_any ("ProgramData", "Users\Public")
-| where not(FileName startswith "__PSScriptPolicy")
-| where not(FileName in~ ("pwncrypt.ps1","portscan.ps1","eicar.ps1","exfiltratedata.ps1"))
-| project TimeGenerated, DeviceName, FileName, FolderPath, SHA256,
-          InitiatingProcessFileName, InitiatingProcessCommandLine
+| where FolderPath has_any ("ProgramData", "Users\\Public")
+| project TimeGenerated, DeviceName, FileName, FolderPath, SHA256, InitiatingProcessFileName
 | order by TimeGenerated desc
 ```
 
@@ -809,14 +806,16 @@ Following ransomware execution, the threat actor deployed a cleanup script to de
 ```kql
 // Q39 - Cleanup batch script
 DeviceFileEvents
-| where TimeGenerated > ago(90d)
-| where DeviceName in~ ("as-pc1","as-pc2")
-| where FileName endswith ".bat"
-| where FolderPath has_any ("ProgramData","Users\Public")
-| project TimeGenerated, DeviceName, FileName, FolderPath, SHA256,
-          InitiatingProcessFileName, InitiatingProcessCommandLine
-| order by TimeGenerated desc
+| where TimeGenerated between (datetime(2026-01-26) .. datetime(2026-01-28))
+| where DeviceName == "as-srv"
+| where FileName has ".bat"
+| project TimeGenerated, DeviceName, InitiatingProcessAccountName, FileName, InitiatingProcessCommandLine
 
+```
+<img width="1098" height="244" alt="Screenshot 2026-03-19 at 15 12 00" src="https://github.com/user-attachments/assets/d74bb9ab-d2af-4362-8ebf-71ec83aba253" />
+
+---
+```kql
 // Q40 - Scope: hosts running updater.exe
 DeviceProcessEvents
 | where TimeGenerated between (datetime(2026-01-27) .. datetime(2026-01-28))
@@ -826,10 +825,6 @@ DeviceProcessEvents
 
 #### 📋 MDE Result — updater.exe execution count confirms compromise scope (Q40)
 
-| DeviceName | count_ |
-|---|---|
-| as-srv | 72 |
-| as-pc2 | 60 |
 <img width="297" height="123" alt="Screenshot 2026-03-18 at 11 02 18" src="https://github.com/user-attachments/assets/16001890-c55f-4cdd-bd8f-183a78eec401" />
 
 ---
