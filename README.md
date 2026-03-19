@@ -1,5 +1,4 @@
-# The-BUYER
-
+# THE BUYER
 # 🔴 Incident Response Report — Akira Ransomware
 ### Ashford Sterling Recruitment | SancLogic Cyber Range — *The Buyer* (Advanced)
 
@@ -523,7 +522,7 @@ DeviceProcessEvents
 
 > **Answer:** `26d5748ffe6bd95e3fee6ce184d388a1a681006dc23a0f08d53c083c593c193b`
 
-SHA256 of `scan.exe`. Retrospective searches using this hash across other endpoints can confirm the scanner's distribution scope. ⚠️ Do not upload to VirusTotal.
+SHA256 of `scan.exe`. Retrospective searches using this hash across other endpoints can confirm the scanner's distribution scope.
 
 ---
 
@@ -549,14 +548,7 @@ Following credential harvesting and network enumeration, the attacker authentica
 
 ### KQL — Lateral Movement Authentication (Q27)
 
-```kql
-DeviceProcessEvents
-| where TimeGenerated between (datetime(2026-01-26) .. datetime(2026-01-28))
-| where DeviceName has "as-srv"
-| where FileName in ("cmd.exe","powershell.exe","net.exe","wmic.exe")
-| where ProcessCommandLine has_any ("net view","\\")
-| project TimeGenerated, DeviceName, ProcessCommandLine, AccountName, FileName
-```
+
 <img width="883" height="141" alt="Screenshot 2026-03-18 at 10 49 45" src="https://github.com/user-attachments/assets/05a77354-52eb-4bb5-b955-853d3a42b568" />
 
 
@@ -592,7 +584,7 @@ DeviceProcessEvents
 DeviceProcessEvents
 | where DeviceName == "as-pc2"
 | where TimeGenerated between (datetime(2026-01-26) .. datetime(2026-01-28))
-| where FileName =~ "powershell.exe"
+| where FileName has "powershell.exe"
 | where ProcessCommandLine contains "Invoke-WebRequest"
 | project TimeGenerated, ProcessCommandLine
 | order by TimeGenerated asc
@@ -673,7 +665,7 @@ DeviceFileEvents
 
 > **Answer:** `512a1f4ed9f512572608c729a2b89f44ea66a40433073aedcd914bd2d33b7015`
 
-SHA256 of `st.exe`. Treat as a custom attacker tool and immediately block across all endpoints via EDR custom indicator policies. ⚠️ Do not upload to VirusTotal.
+SHA256 of `st.exe`. Treat as a custom attacker tool and immediately block across all endpoints via EDR custom indicator policies.
 
 ---
 
@@ -762,7 +754,7 @@ Masqueraded as a legitimate Windows update executable. Designed to delay detecti
 
 > **Answer:** `e609d070ee9f76934d73353be4ef7ff34b3ecc3a2d1e5d052140ed4cb9e4752b`
 
-SHA256 of the Akira ransomware binary. Block at EDR and network perimeter immediately. ⚠️ Do not upload to VirusTotal.
+SHA256 of the Akira ransomware binary. Block at EDR and network perimeter immediately.
 
 ---
 
@@ -848,7 +840,7 @@ Two hosts confirmed compromised: **AS-PC2** (initial access origin, credential t
 
 ## Appendix A — Indicators of Compromise (IOCs)
 
-> ⚠️ Do not submit file hashes to VirusTotal or any public reputation service without prior authorisation.
+> 
 
 ### Domains
 
@@ -943,5 +935,5 @@ Two hosts confirmed compromised: **AS-PC2** (initial access origin, credential t
 
 ---
 
-*Report produced as part of the SancLogic Cyber Range — The Buyer (Advanced) threat hunt exercise.*
+*Report produced by Gaddis M. as part of the SancLogic Cyber Range — The Buyer (Advanced) threat hunt exercise.*
 *Platform: Microsoft Defender for Endpoint + Microsoft Sentinel | Query Language: KQL*
