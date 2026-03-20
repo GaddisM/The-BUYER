@@ -195,6 +195,17 @@ Block execution from:
 
 -----
 
+Over an approximately **80-minute operational window** on 27–28 January 2026, the attacker:
+- Disabled Windows Defender via registry modification (`kill.bat`)
+- Harvested credentials by targeting LSASS
+- Moved laterally to AS-SRV using `as.srv.administrator`
+- Exfiltrated a compressed data archive (`exfil_data.zip`)
+- Deployed Akira ransomware masqueraded as `updater.exe`
+- Wiped Volume Shadow Copies before encryption
+- Dropped the ransom note at **22:18:33 UTC**
+
+----
+
 ## 📌 Conclusion
 This incident highlights how quickly ransomware attacks can escalate when foundational security controls are not in place.
 The attacker leveraged common techniques, but the absence of layered defenses allowed rapid progression from access to full system compromise.
@@ -225,28 +236,6 @@ Implementing the recommended controls will significantly reduce the likelihood a
 - updater.exe
 - exfil_data.zip
 ---
-
-
-| Field | Detail |
-|---|---|
-| **Case Reference** | INC-2026-AKIRA-ASR |
-| **Classification** | TLP:RED — Not for distribution |
-| **Date** | 2026-01-27 / 2026-01-28 |
-| **Affected Hosts** | AS-PC2, AS-SRV |
-| **Victim ID** | 813R-QWJM-XKIJ |
-| **Threat Actor** | Akira Ransomware Group |
-| **Encrypted Extension** | `.akira` |
-
----
-
-Over an approximately **80-minute operational window** on 27–28 January 2026, the attacker:
-- Disabled Windows Defender via registry modification (`kill.bat`)
-- Harvested credentials by targeting LSASS
-- Moved laterally to AS-SRV using `as.srv.administrator`
-- Exfiltrated a compressed data archive (`exfil_data.zip`)
-- Deployed Akira ransomware masqueraded as `updater.exe`
-- Wiped Volume Shadow Copies before encryption
-- Dropped the ransom note at **22:18:33 UTC**
 
 ---
 
