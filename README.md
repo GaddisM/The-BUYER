@@ -1,8 +1,216 @@
-# THE BUYER
-# 🔴 Incident Response Report — Akira Ransomware
-### Ashford Sterling Recruitment | SancLogic Cyber Range — *The Buyer* (Advanced)
+# 🔴 Incident Response Report  
+## Akira Ransomware Attack  
+**Client:** Ashford Sterling Recruitment  
+**Classification:** TLP:RED – Confidential  
+**Date:** Jan 27–28, 2026  
+**Case ID:** INC-2026-AKIRA-ASR  
 
 ---
+
+## 🧾 Executive Summary
+
+Ashford Sterling Recruitment experienced a ransomware attack conducted by the Akira ransomware group, resulting in system compromise, data exfiltration, and file encryption.
+
+The attacker regained access through a previously established remote access tool (AnyDesk) and executed a full attack chain within approximately 80 minutes. This included disabling security controls, harvesting credentials, moving laterally, exfiltrating data, and deploying ransomware.
+
+The presence of staged data (`exfil_data.zip`) indicates a double-extortion scenario, where stolen data may be used for additional leverage.
+
+### 🔴 Business Impact
+- Critical systems encrypted (AS-PC2, AS-SRV)
+- Potential data breach exposure
+- Loss of operational availability
+- Risk of regulatory and reputational damage
+
+---
+
+## 🕒 Incident Overview
+
+### Attack Flow
+
+1. Initial access via AnyDesk (pre-staged)
+2. Windows Defender disabled
+3. Credential harvesting (LSASS)
+4. Internal reconnaissance and scanning
+5. Lateral movement to AS-SRV
+6. Data staging and exfiltration
+7. Ransomware deployment
+8. Backup deletion and encryption
+
+### Affected Systems
+- **AS-PC2** – Initial access and attacker control
+- **AS-SRV** – Data exfiltration and ransomware execution
+
+---
+
+## 🔍 Key Findings
+
+### Unauthorized Remote Access
+- AnyDesk executed from `C:\Users\Public`
+- No monitoring or restriction policies in place
+
+### Defense Evasion
+- Antivirus disabled via registry modification (`kill.bat`)
+- No alerting or blocking of security control tampering
+
+### Credential Compromise
+- LSASS targeted for credential extraction
+- Privileged account used for lateral movement
+
+### Data Exfiltration
+- Archive created: `exfil_data.zip`
+- Indicates high likelihood of data theft
+
+### Ransomware Execution
+- Malware deployed as `updater.exe`
+- Shadow copies deleted prior to encryption
+
+---
+
+## 🚨 Root Cause Analysis
+
+The attack was enabled by the following control failures:
+
+- Unrestricted remote access tools (AnyDesk)
+- Lack of endpoint protection hardening
+- No credential protection mechanisms (e.g., LSASS protection)
+- Excessive administrative privileges
+- No application control policies
+- Insufficient monitoring and alerting
+
+---
+
+## ⚠️ Missed Detection Opportunities
+
+The following events should have triggered alerts:
+
+- Execution of AnyDesk from non-standard path  
+- Registry changes disabling antivirus  
+- LSASS access attempts  
+- Creation of compressed archive files  
+- Shadow copy deletion commands  
+
+---
+
+## 🧪 Selected Detection Queries (KQL)
+
+### 🔎 Detect Suspicious Remote Access Tool Execution
+
+```kql
+DeviceProcessEvents
+| where FileName == "AnyDesk.exe"
+| where FolderPath !startswith "C:\\Program Files"
+| project TimeGenerated, DeviceName, FileName, FolderPath, InitiatingProcessAccountName
+| order by TimeGenerated desc
+```
+### 🔎 Detect Windows Defender Tampering
+```kql
+DeviceRegistryEvents
+| where RegistryValueName == "DisableAntiSpyware"
+| project TimeGenerated, DeviceName, RegistryKey, RegistryValueData
+| order by TimeGenerated desc
+```
+### 🔎 Detect LSASS Access Activity
+
+```kql
+DeviceEvents
+| where ActionType == "NamedPipeEvent"
+| extend PipeName = tostring(parse_json(AdditionalFields).PipeName)
+| where PipeName contains "lsass"
+| project TimeGenerated, DeviceName, InitiatingProcessFileName, PipeName
+
+```
+### 🔎 Detect Shadow Copy Deletion
+```kql
+DeviceProcessEvents
+| where ProcessCommandLine has_any ("vssadmin delete", "wmic shadowcopy delete")
+| project TimeGenerated, DeviceName, ProcessCommandLine, AccountName
+| order by TimeGenerated desc
+```
+### 🔎 Detect Suspicious Archive Creation (Exfiltration)
+```kql
+DeviceFileEvents
+| where FileName endswith ".zip"
+| where InitiatingProcessFileName !in~ ("explorer.exe")
+| project TimeGenerated, DeviceName, FileName, InitiatingProcessFileName
+```
+----
+
+## 🛠️ Remediation & Mitigation
+### 🔴 Immediate Actions
+
+- Isolate and rebuild affected systems
+- Reset all credentials (user and admin)
+- Block identified malicious domains and IPs
+
+---
+
+### 🟠 Short-Term Improvements
+#### Secure Remote Access
+- Remove unauthorized tools (AnyDesk)
+- Enforce Multi-Factor Authentication (MFA)
+  
+#### Credential Protection
+- Enable Credential Guard
+- Reduce administrative privileges
+  
+#### Endpoint Security
+- Enable tamper protection
+- Monitor security control changes
+
+---
+
+### 🟢 Long-Term Protection (SMB-Focused)
+
+#### Application Control
+Block execution from:
+> `C:\Users\Public`
+
+> `C:\ProgramData`
+
+#### Ransomware Resilience 
+- Implement offline / immutable backups
+- Test recovery procedures regularly
+
+#### Monitoring & Detection
+- Deploy centralized logging (SIEM)
+- Monitor outbound traffic anomalies
+
+#### User Awareness
+- Conduct security awareness training
+
+-----
+
+## 📌 Conclusion
+This incident highlights how quickly ransomware attacks can escalate when foundational security controls are not in place.
+The attacker leveraged common techniques, but the absence of layered defenses allowed rapid progression from access to full system compromise.
+Implementing the recommended controls will significantly reduce the likelihood and impact of future ransomware incidents.
+
+---
+
+## 📎 Appendix (Summary of Key IOCs)
+
+#### Domains
+- sync.cloud-endpoint.net
+- cdn.cloud-endpoint.net
+  
+#### IP Addresses
+
+ `172.67.174.46`
+
+ `104.21.30.237`
+ 
+ `88.97.164.155`
+
+#### Key Files
+
+- kill.bat
+- wsync.exe
+- scan.exe
+- st.exe
+- updater.exe
+- exfil_data.zip
+---
+
 
 | Field | Detail |
 |---|---|
